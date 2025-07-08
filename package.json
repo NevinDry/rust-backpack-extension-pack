@@ -3,7 +3,7 @@
   "displayName": "rust-developer-backpack",
   "description": "The essential Rust extension pack — everything you need for the best development experience",
   "publisher": "Nevin",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "icon": "icon.png",
   "engines": {
     "vscode": "^1.101.0"
@@ -15,7 +15,7 @@
   "extensionPack": [
     "rust-lang.rust-analyzer",
     "vadimcn.vscode-lldb",
-    "serayuzgur.crates",
+    "fill-labs.dependi",
     "dustypomerleau.rust-syntax",
     "tamasfe.even-better-toml",
     "jscearcy.rust-doc-viewer",
