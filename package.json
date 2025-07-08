@@ -4,6 +4,7 @@
   "description": "The essential Rust extension pack — everything you need for the best development experience",
   "publisher": "Nevin",
   "version": "1.0.0",
+  "icon": "icon.png",
   "engines": {
     "vscode": "^1.101.0"
   },
