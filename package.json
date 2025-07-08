@@ -1,0 +1,25 @@
+{
+  "name": "rust-developer-backpack",
+  "displayName": "rust-developer-backpack",
+  "description": "The essential Rust extension pack — everything you need for the best development experience",
+  "publisher": "Nevin",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.101.0"
+  },
+  "categories": [
+    "Extension Packs"
+  ],
+  "extensionPack": [
+    "rust-lang.rust-analyzer",
+    "vadimcn.vscode-lldb",
+    "serayuzgur.crates",
+    "dustypomerleau.rust-syntax",
+    "tamasfe.even-better-toml",
+    "jscearcy.rust-doc-viewer",
+    "lorenzopirro.rust-flash-snippets",
+    "lhenryy.rust-panic-highlighter",
+    "usernamehw.errorlens",
+    "cordx56.rustowl-vscode"
+  ]
+}
