@@ -3,7 +3,7 @@
   "displayName": "rust-developer-backpack",
   "description": "The essential Rust extension pack — everything you need for the best development experience",
   "publisher": "Nevin",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "icon": "icon.png",
   "engines": {
     "vscode": "^1.101.0"
@@ -23,5 +23,27 @@
     "lhenryy.rust-panic-highlighter",
     "usernamehw.errorlens",
     "cordx56.rustowl-vscode"
-  ]
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "rustSettings.applyPreferred",
+        "title": "Apply Rust Preferred Settings"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "tsc -p ./",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.90.0",
+    "typescript": "^5.4.0",
+    "tslint": "^5.20.1"
+  }
 }
