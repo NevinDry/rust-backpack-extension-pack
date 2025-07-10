@@ -1,10 +1,17 @@
 import * as vscode from 'vscode';
 
 const preferredSettings: [string, any][] = [
-    ['rustPanicHighlighter.icon.enabled', false],
+    ['rustPanicHighlighter.icon.enabled', false]
 ];
 
+const STATE_KEY = 'preferredRustSettingsStatus';
 export async function activate(context: vscode.ExtensionContext) {
+    const status = context.globalState.get<string>(STATE_KEY);
+
+    if (status === 'applied' || status === 'skipped') {
+        return;
+    }
+
     const config = vscode.workspace.getConfiguration();
 
     const summary = preferredSettings
@@ -15,7 +22,7 @@ export async function activate(context: vscode.ExtensionContext) {
         `Apply the following recommended Rust settings?\n\n${summary}`,
         'Apply All',
         'Review Individually',
-        'Cancel'
+        'Skip'
     );
 
     if (choice === 'Apply All') {
@@ -23,6 +30,7 @@ export async function activate(context: vscode.ExtensionContext) {
             await config.update(key, value, vscode.ConfigurationTarget.Global);
         }
         vscode.window.showInformationMessage('All recommended Rust settings applied.');
+        await context.globalState.update(STATE_KEY, 'applied');
     } else if (choice === 'Review Individually') {
         for (const [key, value] of preferredSettings) {
             const itemChoice = await vscode.window.showQuickPick(
@@ -36,6 +44,9 @@ export async function activate(context: vscode.ExtensionContext) {
             }
         }
         vscode.window.showInformationMessage('Selected Rust settings applied.');
+        await context.globalState.update(STATE_KEY, 'applied');
+    } else if (choice === 'Skip') {
+        await context.globalState.update(STATE_KEY, 'skipped');
     }
 }
 

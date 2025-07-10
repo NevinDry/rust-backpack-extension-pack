@@ -4,6 +4,13 @@ All notable changes to the "rust-developer-backpack" extension pack will be docu
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [1.2.1] - July 10, 2025
+
+### change
+
+- Enhanced prompt
+- Added license
+
 ## [1.2.0] - July 9, 2025
 
 ### change
